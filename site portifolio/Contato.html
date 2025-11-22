@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="home" class="menu-link">Home</a>
+            </li>
+            <li>
+                <a href="Sobre Mim.html" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="Portfólio.html" class="menu-link">Portfólio</a>
+            </li>
+            <li>
+                <a href="Contato.html" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <form class="formulario-contato" id=" fromulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form"  type="text" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-enviar">Enviar para o WhatsApp</button>
+        </form>
+    </section>
+
+            <!-- dados java Script-->
+    <script> 
+        function enviarWhats(event) {
+            event.preventDefault()
+
+
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5521996096742'
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent (texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        console.log(url)
+
+        window.open(url, '_blank')
+        }
+    </script>
+
+</body>
+
+</html>

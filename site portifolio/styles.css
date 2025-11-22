@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, Geneva, Tahoma, sans-serif, Verdana, sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+:root{
+    --primaria: #4f46e5;
+    --secundaaria:#7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255,  255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+
+}
+
+.navegacao{
+    position: fixed;
+    top:0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap:3rem;
+}
+
+.menu-link { 
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width:  0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+
+.foto-perfil{ 
+    width: 400px;
+    height: 400px;
+    box-shadow: 0  0  20px rgba(79, 70, 229, 0.8 );
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    animation: flutuar 5s ease-in-out infinite;
+
+}
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+h1{ 
+    font-size: 3,5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-sub-itulo {
+    font-size: 1.5rem;
+    color: var(--claro)
+}
+
+.sobre { 
+    padding: 6rem 2rem;
+}
+
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--claro);
+    text-align: center;
+    color: var(--primaria);
+}
+
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+
+}
+
+.projetos {
+    padding: 6rem 2rem;
+    justify-content: center;
+}
+
+.projeto-imagem{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    color: var(--primaria);
+    text-align: center;
+    padding: 100px 0px ;
+    padding-bottom: 0;
+    
+}
+
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    max-width: 1200px;  
+    margin: 0 auto;      
+    padding: 100px 20px;
+}
+
+
+.projetos-cadr {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.5 ease;
+    cursor: pointer;
+}
+
+.projetos-cadr:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2 );
+    transform: translateY(-10px) scale(1.03);
+}
+
+.paragrafo-projetos {
+    color: rbba 226, 232, 240, 0.8;
+    line-height: 1.25rem;
+}
+
+.info-projetos {
+    margin-bottom: 5px;
+
+}
+
+.caixa-texto-projetos {
+    padding: 1,5rem;
+}
+
+.contatos {
+
+}
+
+.contatos-titulo {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    padding: 100px 20px ;
+    color: var(--primaria);
+}
+
+.formulario-contato {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem ;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+
+}
+
+
+.grupo-form {
+    margin-bottom: 1.rem;
+}
+
+.formulario-contato {
+    max-width: 900px;      
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+.formulario-contato {
+    max-width: 700px;      
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.campo-form {
+    width: 100%;                  
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--vidro);
+    border-radius: 8px;
+    font-size: 1rem var(--claro);;
+    resize: none;
+}
+
+
+
+
+.campo-form::placeholder {
+    color: rgba(226, 232, 240, 0.7);
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primaria);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.botao-enviar:hover {
+    background: var(--secundaaria);
+    transition: translateY(-4px);
+}
+
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: 
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaaria) 0%, transparent 20%),
+    var(--maisEscuro);
+
+}
+
+
+@keyframes flutuar {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(-10%);
+    }
+}
